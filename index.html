@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://kit.fontawesome.com/7b3b63fc99.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <style>
+        .masthead {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            background-color: rgba(0, 0, 0, .6)
+        }
+
+        .masthead::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            min-height: 500px;
+            opacity: 0.6;
+            background-image: url('https://source.unsplash.com/XFKr7Fphwgs/1920x1080');
+            background-repeat: no-repeat;
+            background-position: center;
+            -ms-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        #box {
+            position: absolute;
+            right: 0;
+            left: 0;
+        }
+
+        .form_input {
+            width: 100%;
+        }
+
+        .form_input>div:first-child,
+        .form_input>div:nth-child(2) {
+            width: 32%;
+        }
+
+        .form_input>div:nth-child(3),
+        .form_input>div:nth-child(4) {
+            width: 17%;
+        }
+
+        .form_input>div {
+            padding-right: 10px;
+        }
+
+        .booking_input {
+            width: 100%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            border: solid 2px #ffffff;
+            padding-left: 10%;
+            font-weight: 500;
+            color: rgb(224, 76, 17);
+            outline: none;
+        }
+
+        .booking_input::placeholder {
+            color: #3F5765;
+        }
+
+        .form_find {
+            width: 150px;
+            height: 50px;
+            background: rgba(255, 82, 13, 0.8);
+            color: #3F5765;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .form_find:hover {
+            background: rgb(255, 82, 13);
+            color: #fefefe;
+        }
+
+        #logo_homestay {
+            background-color: #FEE140;
+            background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="Controller/delete_temporary.php" id="logo_homestay">EAT Homestay</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="View/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="View/account.php">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="View/rooms.php">Rooms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <!-- Box Check-in and Check-out -->
+                    <div id="box">
+                        <form action="Controller/pre_booking.php" method="POST" enctype="multipart/form-data"
+                            autocomplete="off">
+                            <div class="d-flex flex-xl-row flex-column align-items-around justify-content-around">
+                                <div class="form_input d-flex flex-row align-items-around justify-content-around
+                                    flex-wrap">
+                                    <div><input type="text" class="datepicker booking_input booking_input_a booking_in"
+                                            placeholder="Check in" name="checkin" required></div>
+                                    <div><input type="text" class="datepicker booking_input booking_input_a booking_out"
+                                            placeholder="Check out" name="checkout" required></div>
+                                    <div><input type="number" class="booking_input booking_input_b" placeholder="People"
+                                            min="1" max="10" name="people" required></div>
+                                    <div><input type="number" class="booking_input booking_input_b" placeholder="Room"
+                                            min="1" max="9" name="amount" required>
+                                    </div>
+                                </div>
+                                <div><button class="form_find"><i class="fas fa-search"></i></button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Scripts -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                showAnim: "slideDown",
+                dateFormat: "dd mm yy",
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                gotoCurrent: true,
+                maxDate: "+1m",
+                minDate: "0"
+            });
+        });
+    </script>
+</body>
+
+</html>
