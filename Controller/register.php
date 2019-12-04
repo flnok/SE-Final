@@ -98,6 +98,7 @@ if (isset($_SESSION["message"])) {
                                             $_SESSION["username"] = $username;
                                             $_SESSION["name"] = $data[1];
                                             $_SESSION["guest"] = $data[5];
+                                            // header("location:javascript://history.go(-2)");
                                             header("Location: ../index.html");
                                         } else {
                                             echo "Login Failed";
